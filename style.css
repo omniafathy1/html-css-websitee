@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --cream-color: hsl(30, 38%, 92%);
+    --dark-cyan:   hsl(158, 36%, 37%);
+    --dark-blue:  hsl(212, 21%, 14%);
+    --dark-gray:  hsl(228, 12%, 48%);
+    --white-color: hsl(0, 0%, 100%);
+
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+
+   font-family: "Montserrat", sans-serif;
+   background: var(--cream-color);
+   min-height: 100vh;
+   display: grid;
+   place-content: center;
+}
+#products{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    max-width: 600px;
+}
+img , picture{
+    display: block;
+    max-width: 100%;
+}
+#products img{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#products .product-content{
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#products .product-content .category{
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--dark-gray);
+}
+#products .product-content h1{
+    font-family:  "Fraunces", serif; 
+    font-size: 32px;
+    margin: 20px 0;
+    line-height: 1;
+    color: var(--dark-blue);
+
+}
+#products .product-content p{
+    font-size: 14px;
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+#products .product-content .price{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#products .product-content .price .discont-price{
+    font-size: 32px;
+    color: var(--dark-cyan);
+    font-family:  "Fraunces", serif; 
+    margin-right: 20px;
+}
+#products .product-content .cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-cyan);
+    padding: 20px;
+    color: var(--white-color);
+    text-align: center;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#products .product-content .cart::before{
+    content: "";
+    background: url("./images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+    margin-right: 10px;
+}
+@media (max-width: 700px){
+    #products{
+        
+        grid-template-columns: 1fr;
+    }
+    #products img{
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+    #products .product-content{
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+}
